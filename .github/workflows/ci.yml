@@ -1,0 +1,69 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    name: flake check (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: cachix/install-nix-action@v31
+        with:
+          extra_nix_config: |
+            accept-flake-config = true
+
+      - name: nix flake check
+        run: nix flake check --print-build-logs
+
+      - name: build the release binaries
+        run: nix build --print-build-logs .#gno-tools .#gno-indexer
+
+      - name: the tools run
+        run: |
+          nix run .#gno -- --help > /dev/null
+          nix run .#gnokey -- --help > /dev/null
+          nix build .#gno-indexer -o result-indexer
+          ./result-indexer/bin/tx-indexer --help > /dev/null
+
+  source:
+    name: source builds
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: cachix/install-nix-action@v31
+
+      # Compiling the gno tree is slow, so it is kept out of `nix flake check`
+      # and run here. This is what catches a stale vendorHash.
+      - name: build from source
+        run: nix build --print-build-logs .#gno-tools-source .#gno-contribs .#gno-faucet
+
+  versions:
+    name: versions are current
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: cachix/install-nix-action@v31
+
+      # Informational: the update workflow opens the PR that fixes this, so a
+      # new upstream release does not turn the branch red.
+      - name: check for a newer upstream release
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: nix run .#update-versions -- --check

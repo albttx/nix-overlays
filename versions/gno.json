@@ -1,0 +1,43 @@
+{
+  "default": "1.5.0",
+  "releases": {
+    "1.5.0": {
+      "binaries": {
+        "gno": {
+          "aarch64-darwin": "sha256-gewtLcxBNzW0GEBWMC0XqentzrNGgxepBh73OyeS4MM=",
+          "aarch64-linux": "sha256-4JZabKMTeL4OwOHHTf3iJiapiAWTdML8z60n+jybLiE=",
+          "x86_64-darwin": "sha256-LylGI+LsLg+mXg2nzYHL+na2y74dZnj1Pm20MTOo6Nk=",
+          "x86_64-linux": "sha256-Zk0WBe+LRRxerHyYAHvxu5VbG84Sr+QtqcJoSpiOaQk="
+        },
+        "gnodev": {
+          "aarch64-darwin": "sha256-hLbb39QNpTPPX5rgYpfboevtMrX0tTTUgCixgJn9WVc=",
+          "aarch64-linux": "sha256-COgPywFaaVrDdtCh+zJqggbvwCKHuu8Y7Hr1urLeZG0=",
+          "x86_64-darwin": "sha256-I4Bkt8/I4myO6TYhkVhnybFKDC3pvoVYZm9Ney9e6eU=",
+          "x86_64-linux": "sha256-v9dG551njDLlpUTO35Pt0gz3aqtMHUved/lZMFq491M="
+        },
+        "gnokey": {
+          "aarch64-darwin": "sha256-qGOk6PrYxLXKgmnpIqXz+Qku5Wy9oMPAMYAGtGDVEbk=",
+          "aarch64-linux": "sha256-qHl8xt99rO7Jc8T3ge3bnzTQd37wcV5FCEntTnqavrs=",
+          "x86_64-darwin": "sha256-fu1egumi7GJlA44Y7ALRD+LySzhN/8lEvL3zreT+s28=",
+          "x86_64-linux": "sha256-h462WZFh9JGjf9y9QhRHetKNXWII+EKPC//NMRXNNbQ="
+        },
+        "gnoland": {
+          "aarch64-darwin": "sha256-iungqGlsNdmWYJCn4VYCLH3mlOH7vPAam6BY6ngMQas=",
+          "aarch64-linux": "sha256-3eO7OQwt+fGOL3dsJAu4PDI1gTHH29vgSnFoVfV5t6U=",
+          "x86_64-darwin": "sha256-WvhuMvXZF5TwMulHyA3G/K3MEaAuOuHjLePOhNqL3gE=",
+          "x86_64-linux": "sha256-jc/0giiogeOY0jjj4UdgwXXIcvsWToXyHltO6UqLB20="
+        },
+        "gnoweb": {
+          "aarch64-darwin": "sha256-JYq/2dahYgsGezkp4DqxgdQvfk+qw5XlZnPcgWllAYQ=",
+          "aarch64-linux": "sha256-j+TbUsXO2PRhaOJix7oiOo6wIGuhzEPVu90Y2Rm+zaw=",
+          "x86_64-darwin": "sha256-70GSxmuRP+nrKhYIzduFN0i79GPNyAf3ptDRsh1GosY=",
+          "x86_64-linux": "sha256-LlyugAhd8pmUl3sR2DO31+J53fx2PtwJ7PWVpgNdg/w="
+        }
+      },
+      "source": {
+        "narHash": "sha256-CFtt4AExDFW6mDFfZSf7gC/IVIq80E2Td1oFPba+IYE=",
+        "rev": "e75fef82c02876a4df92ad6e325c5479b9532168"
+      }
+    }
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "nodes": {
+    "flake-utils": {
+      "inputs": {
+        "systems": "systems"
+      },
+      "locked": {
+        "lastModified": 1731533236,
+        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "gno-faucet-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1756739755,
+        "narHash": "sha256-kxAQxB09ugXnf8AIXa0AMXSsPJCqqjSPfDv654yVpkQ=",
+        "owner": "gnolang",
+        "repo": "faucet",
+        "rev": "f738faeb670df701e682001ebd6b9479a9e3ac03",
+        "type": "github"
+      },
+      "original": {
+        "owner": "gnolang",
+        "ref": "v0.5.3",
+        "repo": "faucet",
+        "type": "github"
+      }
+    },
+    "gno-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1789808303,
+        "narHash": "sha256-CFtt4AExDFW6mDFfZSf7gC/IVIq80E2Td1oFPba+IYE=",
+        "owner": "gnolang",
+        "repo": "gno",
+        "rev": "e75fef82c02876a4df92ad6e325c5479b9532168",
+        "type": "github"
+      },
+      "original": {
+        "owner": "gnolang",
+        "ref": "v1.5.0",
+        "repo": "gno",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1791336361,
+        "narHash": "sha256-o9ZUW4SlEAvFPIyJWnqChhOT/VHpHg8TAvEgmqK1fSI=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "7dd199b0e2993e37b4775ed66b1c291699608c9f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "flake-utils": "flake-utils",
+        "gno-faucet-src": "gno-faucet-src",
+        "gno-src": "gno-src",
+        "nixpkgs": "nixpkgs"
+      }
+    },
+    "systems": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}

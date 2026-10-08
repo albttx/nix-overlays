@@ -1,0 +1,85 @@
+name: update-versions
+
+on:
+  schedule:
+    # Daily, 06:00 UTC.
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+    inputs:
+      gno:
+        description: "Pin a specific gno version instead of the latest (e.g. 1.8.0)"
+        required: false
+      tx_indexer:
+        description: "Pin a specific tx-indexer version instead of the latest"
+        required: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update:
+    name: propose the latest tagged release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: cachix/install-nix-action@v31
+
+      - name: refresh the version manifests
+        id: update
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          args=()
+          if [ -n "${{ inputs.gno }}" ]; then
+            args+=(--gno "${{ inputs.gno }}")
+          fi
+          if [ -n "${{ inputs.tx_indexer }}" ]; then
+            args+=(--tx-indexer "${{ inputs.tx_indexer }}")
+          fi
+          nix run .#update-versions -- "${args[@]}"
+
+      # A changed go.mod or go.sum in the new release means the source builds
+      # need fresh vendorHashes, or `gno-tools-source` stops evaluating.
+      - name: record any new vendorHashes
+        run: nix run .#vendor-hash
+
+      - name: verify the proposal builds
+        run: nix build --print-build-logs .#gno-tools .#gno-indexer
+
+      - name: read the new versions
+        id: versions
+        run: |
+          echo "gno=$(jq -r .default versions/gno.json)" >> "$GITHUB_OUTPUT"
+          echo "tx_indexer=$(jq -r .default versions/tx-indexer.json)" >> "$GITHUB_OUTPUT"
+
+      # GITHUB_TOKEN-authored PRs do not trigger workflow runs. Set a PAT as
+      # GNO_NIX_PAT if you want ci.yml to run on these PRs.
+      - uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GNO_NIX_PAT || secrets.GITHUB_TOKEN }}
+          branch: chore/update-gno-versions
+          delete-branch: true
+          title: "chore(versions): gno ${{ steps.versions.outputs.gno }}, tx-indexer ${{ steps.versions.outputs.tx_indexer }}"
+          commit-message: |
+            chore(versions): bump to gno ${{ steps.versions.outputs.gno }}
+
+            Refreshed by .github/workflows/update-versions.yml from the newest
+            vX.Y.Z release upstream. Hashes come from each release's own
+            checksum manifest, so no binary was downloaded to produce them.
+          body: |
+            Proposes the newest tagged upstream release as the default.
+
+            - `gno` → **${{ steps.versions.outputs.gno }}**
+            - `tx-indexer` → **${{ steps.versions.outputs.tx_indexer }}**
+
+            Release hashes are derived from each release's published checksum
+            manifest and converted to SRI, so nothing was fetched on trust.
+            `gno-src` was re-pinned and the lock refreshed so the source builds
+            track the same release.
+
+            Opened automatically. Review the upstream release notes before merging.
+          labels: |
+            dependencies
+            automated
