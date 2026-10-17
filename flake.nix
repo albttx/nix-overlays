@@ -11,10 +11,10 @@
     # Override it to build any other tag, branch or revision. You supply no
     # hash; your own flake.lock records it:
     #
-    #   inputs.gno-nix.inputs.gno-src.url = "github:gnolang/gno/v1.5.0";
+    #   inputs.gno-nix.inputs.gno-src.url = "github:gnolang/gno/v1.6.0";
     #   inputs.gno-nix.inputs.gno-src.url = "github:gnolang/gno/my-branch";
     gno-src = {
-      url = "github:gnolang/gno/v1.5.0";
+      url = "github:gnolang/gno/v1.6.0";
       flake = false;
     };
 
