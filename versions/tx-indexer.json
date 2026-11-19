@@ -1,11 +1,17 @@
 {
-  "default": "1.2.1",
+  "default": "1.5.0",
   "releases": {
     "1.2.1": {
       "aarch64-darwin": "sha256-lSbnJ10CgO5xnXRxy+WKSe9BR4vJORLSwccmgbwq2sw=",
       "aarch64-linux": "sha256-eODySHajk/amremdOYyqOHjVTki7a4Tqu1NrGPhaVzM=",
       "x86_64-darwin": "sha256-Mw+lhATwOIdPhLEkkymUjR8SbJqQZSDHeD+QDQfr4Z4=",
       "x86_64-linux": "sha256-s8wTJgIqAbBvlwCrfl5xOcop4X2DTO+9/VG+fw4N4sk="
+    },
+    "1.5.0": {
+      "aarch64-darwin": "sha256-HPtZBL2YRgeqF5i5woCXTm0CLS/YNmPGuGTIBl443qw=",
+      "aarch64-linux": "sha256-LHDV+S/KVhB7tdtf4lVDTqoLv9tvzOblf5i6RjcIGeg=",
+      "x86_64-darwin": "sha256-irlO6ZQJdC8hP/CXTfGPvywEGVKZ6tFpbixc6YB6TpM=",
+      "x86_64-linux": "sha256-X294vhbZ1w3DYkJEXsQuJhVeRhf/YTESqoTb4+FkNCI="
     }
   }
 }

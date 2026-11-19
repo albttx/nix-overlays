@@ -38,16 +38,16 @@
     "gno-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1789808303,
-        "narHash": "sha256-CFtt4AExDFW6mDFfZSf7gC/IVIq80E2Td1oFPba+IYE=",
+        "lastModified": 1794908762,
+        "narHash": "sha256-ZVE987RY2t/BWK6dQn/cqS+wqO1LKXrtsb4G+JwxsWs=",
         "owner": "gnolang",
         "repo": "gno",
-        "rev": "e75fef82c02876a4df92ad6e325c5479b9532168",
+        "rev": "fc79041f4cd1a7b3ed4b316dc5ac14162eb78730",
         "type": "github"
       },
       "original": {
         "owner": "gnolang",
-        "ref": "v1.5.0",
+        "ref": "v1.8.0",
         "repo": "gno",
         "type": "github"
       }

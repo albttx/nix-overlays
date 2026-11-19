@@ -1,5 +1,5 @@
 {
-  "default": "1.5.0",
+  "default": "1.8.0",
   "releases": {
     "1.5.0": {
       "binaries": {
@@ -37,6 +37,44 @@
       "source": {
         "narHash": "sha256-CFtt4AExDFW6mDFfZSf7gC/IVIq80E2Td1oFPba+IYE=",
         "rev": "e75fef82c02876a4df92ad6e325c5479b9532168"
+      }
+    },
+    "1.8.0": {
+      "binaries": {
+        "gno": {
+          "aarch64-darwin": "sha256-bcVLR1CFgZ08FMwmhzBlck25pPMAqhIpvy34+3zpKjE=",
+          "aarch64-linux": "sha256-7KDqEX3bvczWH+h56mkiHCJ9jlhPYgk6Dazd1w6kKHo=",
+          "x86_64-darwin": "sha256-CEt9SHFO7MXuFVfF/dUXIj5YUTRqekHqtPJW+tXmAGs=",
+          "x86_64-linux": "sha256-yjAM4dfRtat0Q/27BDZGggrpcL7MLMPgmKX+79ZAiYM="
+        },
+        "gnodev": {
+          "aarch64-darwin": "sha256-g/9b+B7vPKQt/DfUzxBZtw3J/zlLKjVYYNaQf9mpZMI=",
+          "aarch64-linux": "sha256-UbrXqToeo0XBtiZ6bBON+CSUrazZc6IupJjRLkH4suE=",
+          "x86_64-darwin": "sha256-mmzxCza37vVZiw+icH3R3LS5cNoDS90eDLHjk9v+G6c=",
+          "x86_64-linux": "sha256-e89Zr0dWvaAF3UTRiOu6X2BB6btiu7s8WUOar0BkyKE="
+        },
+        "gnokey": {
+          "aarch64-darwin": "sha256-wGSO4+gr/3fEO+0a7CyvsOIT/mZG1lqD0DIgGLiMi7c=",
+          "aarch64-linux": "sha256-Xyze8mkm/AFU5srkaP654fb0Tj4yHc80OgLuEDBd1hU=",
+          "x86_64-darwin": "sha256-dN8X3tuHj1jnWN3bdIkSj0ANwvD3l6b06CkHiLHs6Uo=",
+          "x86_64-linux": "sha256-5BNL5ixvVyEspIF9j1kf1IkIH7UryTkakfbnPLwzyes="
+        },
+        "gnoland": {
+          "aarch64-darwin": "sha256-jdsm8pganII24wLNtDWpPwy3GcvNaeJjsw1xIyleH7c=",
+          "aarch64-linux": "sha256-y5B7dKgThd9Lc1z67Aemec6tzvJfE5gu1d/qZIzcmKU=",
+          "x86_64-darwin": "sha256-dLJbqW3g05afx1avmGiX8vl3HO0YmvLVZRsILs+hsfI=",
+          "x86_64-linux": "sha256-MuiOPHUJysI4fA6qkLKVBdmJJXP9zvl3H6ifT+1frbs="
+        },
+        "gnoweb": {
+          "aarch64-darwin": "sha256-B+8jddDgthMhFgwA8uvusVBzAAbCdvPqXyZBv4RZ46A=",
+          "aarch64-linux": "sha256-U4aqvT6of4g2tbyQjgcRpVaAI1lA+E/YuFkB52IhoMY=",
+          "x86_64-darwin": "sha256-5uW1pnMbS5FgHk38bHY1vFvU2LlV47EkN4341dlVMIU=",
+          "x86_64-linux": "sha256-PPjWkWJARqItW79Z+o/cfEEAwO8D+OTsYGwDAllYj40="
+        }
+      },
+      "source": {
+        "narHash": "sha256-ZVE987RY2t/BWK6dQn/cqS+wqO1LKXrtsb4G+JwxsWs=",
+        "rev": "fc79041f4cd1a7b3ed4b316dc5ac14162eb78730"
       }
     }
   }
